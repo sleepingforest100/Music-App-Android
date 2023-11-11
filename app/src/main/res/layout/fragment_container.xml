@@ -6,7 +6,44 @@
     android:layout_height="match_parent"
     android:background="@color/gray">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:padding="10dp"
+            android:text="@string/good_afternoon"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/recently_played"
+                android:textColor="@color/white"
+                android:textSize="19sp" />
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
     <kz.just_code.musicapp.view.NavigationView
+        android:id="@+id/navigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
