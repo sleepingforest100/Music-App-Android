@@ -2,33 +2,42 @@ package kz.just_code.musicapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kz.just_code.musicapp.databinding.ItemPlaylistBinding
 
-class PlaylistsAdapter(
-    private val playlistList: ArrayList<Playlist>,
-    private val listener: (Playlist, Int) -> Unit
-) : RecyclerView.Adapter<PlaylistsAdapter.ViewHolder>() {
-    class ViewHolder(var itemBinding: ItemPlaylistBinding) :
+class PlaylistsAdapter() :
+    ListAdapter<Playlist, PlaylistsAdapter.PlaylistViewHolder>(PlaylistDiffUtils()) {
+    class PlaylistDiffUtils : DiffUtil.ItemCallback<Playlist>() {
+        override fun areItemsTheSame(oldItem: Playlist, newItem: Playlist): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Playlist, newItem: Playlist): Boolean {
+            return oldItem == newItem
+        }
+
+    }
+
+   inner class PlaylistViewHolder(var itemBinding: ItemPlaylistBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindItem(playlist: Playlist) {
-            itemBinding.imageView11.setImageResource(playlist.image)
+            itemBinding.playlistIcon.setImageResource(playlist.image)
             itemBinding.playlistTitle.text = playlist.title
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaylistViewHolder {
         val v = ItemPlaylistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(v)
+        return PlaylistViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: PlaylistsAdapter.ViewHolder, position: Int) {
-        holder.bindItem(playlistList[position])
-        holder.itemView.setOnClickListener { listener(playlistList[position], position) }
+    override fun onBindViewHolder(holder: PlaylistsAdapter.PlaylistViewHolder, position: Int) {
+        holder.bindItem(getItem(position))
+        holder.itemView.setOnClickListener { listener?.invoke(getItem(position)) }
     }
 
-    override fun getItemCount(): Int {
-        return playlistList.size
-    }
+    var listener: ((Playlist) -> Unit)? = null
 
 }
