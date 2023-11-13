@@ -1,24 +1,26 @@
-package kz.just_code.musicapp
+package kz.just_code.musicapp.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import kz.just_code.musicapp.Playlist
+import kz.just_code.musicapp.PlaylistSecondList
+import kz.just_code.musicapp.Playlists2Adapter
+import kz.just_code.musicapp.PlaylistsAdapter
+import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentContainerBinding
-import kz.just_code.musicapp.fragments.BaseFragment
+import kz.just_code.musicapp.viewmodel.HomeViewModel
 
 class ContainerFragment : BaseFragment<FragmentContainerBinding>(FragmentContainerBinding::inflate) {
 private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
+    private val viewModel = HomeViewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
         setUpSecondRecyclerView()
+        viewModel.searchMusic("text")
     }
 
     private fun setUpRecyclerView() {

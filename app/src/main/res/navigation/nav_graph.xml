@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/containerFragment"
-        android:name="kz.just_code.musicapp.ContainerFragment"
+        android:name="kz.just_code.musicapp.fragments.ContainerFragment"
         android:label="ContainerFragment" />
 </navigation>
