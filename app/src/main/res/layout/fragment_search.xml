@@ -7,7 +7,7 @@
     android:background="@color/gray">
 
     <ImageView
-        android:id="@+id/imageView22"
+        android:id="@+id/search_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow_back"
@@ -15,11 +15,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView23"
+        android:id="@+id/search_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@id/imageView22"
+        app:layout_constraintBottom_toBottomOf="@id/search_back_btn"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView22"
+        app:layout_constraintTop_toBottomOf="@id/search_back_btn"
         app:queryHint="What do you want to listen to?" />
 
 
