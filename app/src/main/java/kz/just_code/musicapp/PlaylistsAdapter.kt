@@ -20,7 +20,7 @@ class PlaylistsAdapter() :
 
     }
 
-   inner class PlaylistViewHolder(var itemBinding: ItemPlaylistBinding) :
+    inner class PlaylistViewHolder(var itemBinding: ItemPlaylistBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindItem(playlist: Playlist) {
             itemBinding.playlistIcon.setImageResource(playlist.image)

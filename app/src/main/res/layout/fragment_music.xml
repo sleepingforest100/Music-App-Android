@@ -7,7 +7,7 @@
     android:background="@color/gray">
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/music_arrow_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow_back"
@@ -15,21 +15,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/music_menu_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-       />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/playing_from_playlist"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-        app:layout_constraintEnd_toStartOf="@+id/imageView15"
-        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintBottom_toBottomOf="@+id/music_arrow_back_btn"
+        app:layout_constraintEnd_toStartOf="@+id/music_menu_btn"
+        app:layout_constraintStart_toEndOf="@+id/music_arrow_back_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -37,26 +37,25 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="@drawable/rounded_image_background"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/song_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/song_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="251dp"
         android:text="Song title"
         android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintBottom_toTopOf="@+id/music_progress"
+        app:layout_constraintEnd_toStartOf="@+id/music_like_btn"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.974" />
 
     <TextView
         android:id="@+id/singer"
@@ -70,9 +69,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/song_title"
         app:layout_constraintTop_toBottomOf="@+id/song_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <ImageView
+        android:id="@+id/music_like_btn"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="496dp"
@@ -84,17 +84,18 @@
         app:tint="@color/white" />
 
     <ImageView
-        android:id="@+id/imageView21"
+        android:id="@+id/music_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
         android:src="@drawable/progress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song_image" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/music_group_background"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginBottom="36dp"
@@ -105,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/music_previous_background"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginBottom="40dp"
@@ -116,7 +117,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/music_pause_background"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_marginEnd="172dp"
@@ -126,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/music_next_background"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginEnd="76dp"
@@ -138,7 +139,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/music_repeat_background"
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginBottom="40dp"
@@ -149,47 +150,52 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
+        android:id="@+id/previous_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/previous"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
-        app:layout_constraintEnd_toEndOf="@+id/imageView20"
-        app:layout_constraintStart_toStartOf="@+id/imageView20"
-        app:layout_constraintTop_toTopOf="@+id/imageView20" />
+        app:layout_constraintBottom_toBottomOf="@+id/music_previous_background"
+        app:layout_constraintEnd_toEndOf="@+id/music_previous_background"
+        app:layout_constraintStart_toStartOf="@+id/music_previous_background"
+        app:layout_constraintTop_toTopOf="@+id/music_previous_background" />
 
     <ImageView
+        android:id="@+id/next_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/next"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
-        app:layout_constraintEnd_toEndOf="@+id/imageView18"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
-        app:layout_constraintTop_toTopOf="@+id/imageView18" />
+        app:layout_constraintBottom_toBottomOf="@+id/music_next_background"
+        app:layout_constraintEnd_toEndOf="@+id/music_next_background"
+        app:layout_constraintStart_toStartOf="@+id/music_next_background"
+        app:layout_constraintTop_toTopOf="@+id/music_next_background" />
 
     <ImageView
+        android:id="@+id/repeat_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/repeate_music"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
-        app:layout_constraintEnd_toEndOf="@+id/imageView19"
-        app:layout_constraintStart_toStartOf="@+id/imageView19"
-        app:layout_constraintTop_toTopOf="@+id/imageView19" />
+        android:src="@drawable/repeat_music"
+        app:layout_constraintBottom_toBottomOf="@+id/music_repeat_background"
+        app:layout_constraintEnd_toEndOf="@+id/music_repeat_background"
+        app:layout_constraintStart_toStartOf="@+id/music_repeat_background"
+        app:layout_constraintTop_toTopOf="@+id/music_repeat_background" />
 
     <ImageView
+        android:id="@+id/pause_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/pause"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+        app:layout_constraintBottom_toBottomOf="@+id/music_pause_background"
+        app:layout_constraintEnd_toEndOf="@+id/music_pause_background"
+        app:layout_constraintStart_toStartOf="@+id/music_pause_background"
+        app:layout_constraintTop_toTopOf="@+id/music_pause_background" />
 
     <ImageView
+        android:id="@+id/group_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/group"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView17"
-        app:layout_constraintEnd_toEndOf="@+id/imageView17"
-        app:layout_constraintStart_toStartOf="@+id/imageView17"
-        app:layout_constraintTop_toTopOf="@+id/imageView17" />
+        app:layout_constraintBottom_toBottomOf="@+id/music_group_background"
+        app:layout_constraintEnd_toEndOf="@+id/music_group_background"
+        app:layout_constraintStart_toStartOf="@+id/music_group_background"
+        app:layout_constraintTop_toTopOf="@+id/music_group_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>
