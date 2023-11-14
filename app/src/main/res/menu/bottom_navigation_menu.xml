@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/containerFragment"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_home2"
-        android:title="Home" />
+        android:title="@string/home" />
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/searchFragment"
         android:enabled="true"
         android:icon="@drawable/ic_search_normal"
-        android:title="Search"/>
+        android:title="@string/search"/>
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/yourLibraryFragment"
         android:enabled="true"
         android:icon="@drawable/ic_layer"
-        android:title="Your library"/>
+        android:title="@string/your_library"/>
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/premiumFragment"
         android:enabled="true"
         android:icon="@drawable/shapes"
-        android:title="Premium"/>
+        android:title="@string/premium"/>
 </menu>

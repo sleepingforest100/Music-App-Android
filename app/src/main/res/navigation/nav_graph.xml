@@ -2,10 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/containerFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/containerFragment"
-        android:name="kz.just_code.musicapp.fragments.ContainerFragment"
-        android:label="ContainerFragment" />
+        android:id="@+id/homeFragment"
+        android:name="kz.just_code.musicapp.fragments.HomeFragment"
+        android:label="HomeFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="kz.just_code.musicapp.fragments.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/yourLibraryFragment"
+        android:name="kz.just_code.musicapp.fragments.YourLibraryFragment"
+        android:label="YourLibraryFragment" />
+    <fragment
+        android:id="@+id/premiumFragment"
+        android:name="kz.just_code.musicapp.fragments.PremiumFragment"
+        android:label="PremiumFragment" />
+
+
 </navigation>

@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:background="@drawable/button_navigation_bg"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        >
 
 
         <ImageView

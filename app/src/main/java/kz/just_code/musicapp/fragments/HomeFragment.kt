@@ -2,17 +2,18 @@ package kz.just_code.musicapp.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kz.just_code.musicapp.Playlist
 import kz.just_code.musicapp.PlaylistSecondList
 import kz.just_code.musicapp.Playlists2Adapter
 import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
-import kz.just_code.musicapp.databinding.FragmentContainerBinding
+import kz.just_code.musicapp.databinding.FragmentHomeBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
 
-class ContainerFragment : BaseFragment<FragmentContainerBinding>(FragmentContainerBinding::inflate) {
-private lateinit var adapter: PlaylistsAdapter
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+    private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
     private val viewModel = HomeViewModel()
 
@@ -21,14 +22,16 @@ private lateinit var adapter: PlaylistsAdapter
         setUpRecyclerView()
         setUpSecondRecyclerView()
         viewModel.searchMusic("text")
+
     }
+
 
     private fun setUpRecyclerView() {
         adapter = PlaylistsAdapter()
 
         binding.recentlyList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = this@ContainerFragment.adapter
+            adapter = this@HomeFragment.adapter
 
         }
 
@@ -40,7 +43,7 @@ private lateinit var adapter: PlaylistsAdapter
         adapter2 = Playlists2Adapter()
         binding.getStartedList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = this@ContainerFragment.adapter2
+            adapter = this@HomeFragment.adapter2
         }
         adapter2.submitList(createPlaylistList2())
     }
@@ -76,4 +79,5 @@ private lateinit var adapter: PlaylistsAdapter
 
         )
     }
+
 }
