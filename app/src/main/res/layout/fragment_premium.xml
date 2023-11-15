@@ -48,14 +48,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/premium_image"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp" />
 
             <ImageView
                 android:id="@+id/get3monthsfree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/premium_get3monthfree"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp" />
 
             <ImageView
                 android:layout_width="match_parent"
