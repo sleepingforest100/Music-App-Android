@@ -4,12 +4,11 @@ buildscript {
         google()
     }
     dependencies {
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.4")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.5")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.44")
     }
 
-    dependencies {
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.40")
-    }
+
 }
 plugins {
     id("com.android.application") version "8.1.1" apply false
