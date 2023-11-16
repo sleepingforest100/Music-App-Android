@@ -21,7 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
         setUpSecondRecyclerView()
-        viewModel.searchMusic("text")
+//        viewModel.searchMusic("text")
 
     }
 

@@ -14,4 +14,5 @@ object NetworkModule {
     open fun getSpotifyApi(): SpotifyApi{
         return getRetrofit().create(SpotifyApi::class.java)
     }
+
 }

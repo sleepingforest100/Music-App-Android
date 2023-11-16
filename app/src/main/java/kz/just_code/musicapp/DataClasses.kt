@@ -227,8 +227,8 @@ data class ImageItem(
 
 data class ImageSource(
     val url: String? = null,
-    val width: Int?? = null,
-    val height: Int?? = null
+    val width: Int? = null,
+    val height: Int? = null
 )
 
 data class Owner(
