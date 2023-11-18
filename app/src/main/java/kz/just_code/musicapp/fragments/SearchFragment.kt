@@ -6,12 +6,14 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import kz.just_code.musicapp.AlbumAdapter
 import kz.just_code.musicapp.databinding.FragmentSearchBinding
 import kz.just_code.musicapp.viewmodel.SearchViewModel
 
 @AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
     private val viewmodel: SearchViewModel by viewModels()
+    private val adapter = AlbumAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,7 +30,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
         })
         viewmodel.albumsLiveData.observe(viewLifecycleOwner){
-             Toast.makeText(requireContext(), (it?.size ?: 0).toString(), Toast.LENGTH_SHORT).show()
+            adapter.submitList(it)
         }
+        binding.searchRecyclerView.adapter = adapter
     }
+
 }

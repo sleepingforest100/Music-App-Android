@@ -2,6 +2,7 @@ package kz.just_code.musicapp.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kz.just_code.musicapp.Playlist
@@ -11,11 +12,13 @@ import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentHomeBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
+import kz.just_code.musicapp.viewmodel.SearchViewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
-    private val viewModel = HomeViewModel()
+//    private val viewModel = HomeViewModel()
+    private val viewmodel: SearchViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

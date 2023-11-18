@@ -6,10 +6,11 @@ data class SearchResponse(
     val artists: Artists? = null,
     val genres: Genres? = null,
     val playlists: Playlists? = null,
-val podcasts: Podcasts? = null,
+    val podcasts: Podcasts? = null,
     val tracks: Tracks? = null,
     val topResults: TopResults? = null
-    )
+)
+
 //ALBUMS
 data class Albums(
     val totalCount: Int? = null,
@@ -88,6 +89,7 @@ data class AvatarImageSourceInfo(
     val width: Int? = null,
     val height: Int? = null
 )
+
 //GENRES
 data class Genres(
     val totalCount: Int? = null,
@@ -171,6 +173,7 @@ data class PodcastCoverSource(
 data class PodcastPublisher(
     val name: String? = null
 )
+
 //TOP RESULTS
 data class TopResults(
     val items: List<TopResultItem>? = null,
