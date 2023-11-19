@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kz.just_code.musicapp.AlbumItem
 import kz.just_code.musicapp.Albums
-import kz.just_code.musicapp.data.AlbumRepository
 import kz.just_code.musicapp.data.MusicRepository
 import javax.inject.Inject
 

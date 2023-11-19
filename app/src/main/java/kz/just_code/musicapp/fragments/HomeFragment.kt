@@ -54,7 +54,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun createPlaylistList(): ArrayList<Playlist> {
         return arrayListOf<Playlist>(
             Playlist(0, "Playlist 1", R.drawable.example),
-            Playlist(1, "Playlist 2", R.drawable.example)
+            Playlist(1, "Playlist 2", R.drawable.example),
+            Playlist(2, "Playlist 3", R.drawable.example),
+            Playlist(4, "Playlist 4", R.drawable.example)
         )
     }
 
