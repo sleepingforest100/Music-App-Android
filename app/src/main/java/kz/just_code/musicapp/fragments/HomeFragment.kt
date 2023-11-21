@@ -11,6 +11,7 @@ import kz.just_code.musicapp.Playlists2Adapter
 import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentHomeBinding
+import kz.just_code.musicapp.databinding.ViewBottomNavigationBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
 import kz.just_code.musicapp.viewmodel.SearchViewModel
 
@@ -27,6 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 //        viewModel.searchMusic("text")
 
     }
+
 
 
     private fun setUpRecyclerView() {

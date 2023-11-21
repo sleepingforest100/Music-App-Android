@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/user_icon" />
 
     <TextView
+        android:id="@+id/recents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
@@ -61,57 +62,11 @@
         app:layout_constraintStart_toEndOf="@id/recents_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/add_artist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:src="@drawable/background_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recents_icon" />
-
-    <ImageView
-        android:id="@+id/plus_icon2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/plus_icon"
-        app:layout_constraintStart_toStartOf="@id/add_artist"
-        app:layout_constraintTop_toTopOf="@id/add_artist" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_artist"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/add_artist"
-        app:layout_constraintStart_toEndOf="@id/plus_icon2"
-        app:layout_constraintTop_toTopOf="@id/add_artist" />
-
-    <ImageView
-        android:id="@+id/add_podcasts_and_shows"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/background_add"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_artist" />
-    <ImageView
-        android:id="@+id/plus_icon3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/plus_icon"
-        app:layout_constraintStart_toStartOf="@id/add_podcasts_and_shows"
-        app:layout_constraintTop_toTopOf="@id/add_podcasts_and_shows"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add podcasts and shows"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/plus_icon3"
-        app:layout_constraintTop_toTopOf="@id/add_podcasts_and_shows"
-        app:layout_constraintBottom_toBottomOf="@id/add_podcasts_and_shows"/>
-
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerview_library"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/recents"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

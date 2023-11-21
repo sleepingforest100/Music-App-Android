@@ -8,6 +8,9 @@
         android:id="@+id/homeFragment"
         android:name="kz.just_code.musicapp.fragments.HomeFragment"
         android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -21,6 +24,10 @@
         android:id="@+id/premiumFragment"
         android:name="kz.just_code.musicapp.fragments.PremiumFragment"
         android:label="PremiumFragment" />
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="kz.just_code.musicapp.fragments.MusicFragment"
+        android:label="MusicFragment" />
 
 
 </navigation>
