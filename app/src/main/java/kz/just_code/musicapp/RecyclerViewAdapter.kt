@@ -4,44 +4,63 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import kz.just_code.musicapp.databinding.AddArtistBinding
+import kz.just_code.musicapp.databinding.ItemArtistBinding
 
 class RecyclerViewAdapter(
     private val items: List<RecyclerViewItem>,
     private val onButtonClickListener: (Artist) -> Unit
-) : ListAdapter<RecyclerViewItem, RecyclerView.ViewHolder>() {
+) : ListAdapter<Artist, BaseViewHolder<*, Artist>>(ArtistDiffUtils()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    class ArtistDiffUtils: DiffUtil.ItemCallback<Artist>() {
+        override fun areItemsTheSame(
+            oldItem: Artist,
+            newItem: Artist
+        ): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(
+            oldItem: Artist,
+            newItem: Artist
+        ): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*, Artist> {
         return when (viewType) {
             ItemType.HEADER.ordinal -> {
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_artist, parent, false)
-                HeaderViewHolder(view)
+                ButtonViewHolder(
+                    AddArtistBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false), onButtonClickListener
+                )
             }
             ItemType.ITEM.ordinal -> {
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.add_artist, parent, false)
-                ButtonViewHolder(view, onAddArtistClickListener)
+                HeaderViewHolder(
+                    ItemArtistBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false)
+                )
             }
-            else -> throw IllegalArgumentException("Unknown view type")
+            else -> {
+                HeaderViewHolder(
+                    ItemArtistBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false)
+                )
+            }
         }
     }
 
 
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (val item = items[position]) {
-            is HeaderItem -> (holder as HeaderViewHolder).bind(item)
-            is ButtonItem -> (holder as ButtonViewHolder).bind(item)
-        }
-    }
-
-    override fun getItemCount(): Int {
-        return items.size
+    override fun onBindViewHolder(holder: BaseViewHolder<*, Artist>, position: Int) {
+        holder.bind(getItem(position))
     }
 
     override fun getItemViewType(position: Int): Int {
-        return items[position].itemType.ordinal
+        return getItem(position).viewType?.ordinal ?: 0
     }
 }

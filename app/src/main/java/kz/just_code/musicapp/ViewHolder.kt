@@ -1,22 +1,31 @@
 package kz.just_code.musicapp
 
-import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
+import kz.just_code.musicapp.databinding.AddArtistBinding
+import kz.just_code.musicapp.databinding.ItemArtistBinding
 
-class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(headerItem: HeaderItem) {
+class HeaderViewHolder(override val binding: ItemArtistBinding) :
+    BaseViewHolder<ItemArtistBinding, Artist>(binding) {
 
-        val titleTextView: TextView = itemView.findViewById(R.id.artist_name)
-        titleTextView.text = headerItem.title
+    override fun bind(item: Artist) {
+        binding.artistName.text = item.items?.firstOrNull()?.profile?.name
     }
 }
 
-class ButtonViewHolder(itemView: View, private val onButtonClickListener: (AddArtist) -> Unit) :
-    RecyclerView.ViewHolder(itemView) {
+class ButtonViewHolder(
+    override val binding: AddArtistBinding,
+    private val onButtonClickListener: (Artist) -> Unit
+) :
+    BaseViewHolder<AddArtistBinding, Artist>(binding) {
 
-    fun bind(buttonItem: ButtonItem) {
-        itemView.setOnClickListener { onButtonClickListener.invoke(buttonItem.addArtist) }
+    override fun bind(item: Artist) {
+        itemView.setOnClickListener { onButtonClickListener.invoke(item) }
     }
+}
+
+abstract class BaseViewHolder<VB : ViewBinding, T>(open val binding: VB) :
+    RecyclerView.ViewHolder(binding.root) {
+    abstract fun bind(item: T)
 }
 

@@ -30,7 +30,9 @@ data class AlbumData(
 )
 
 data class Artist(
-    val items: List<ArtistItem>? = null
+    val id: Int? = null,
+    val items: List<ArtistItem>? = null,
+    val viewType: ItemType? = ItemType.ITEM
 )
 
 data class ArtistItem(
