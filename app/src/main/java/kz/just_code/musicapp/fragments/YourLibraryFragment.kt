@@ -18,7 +18,7 @@ import kz.just_code.musicapp.databinding.FragmentYourLibraryBinding
 
 class YourLibraryFragment: BaseFragment<FragmentYourLibraryBinding>(FragmentYourLibraryBinding::inflate) {
     private val onAddArtistClickListener: (AddArtist) -> Unit = { addArtist ->
-       // Toast.makeText(ContentProviderCompat.requireContext(), "Button clicked for ${addArtist.name}", Toast.LENGTH_SHORT).show()
+        // Toast.makeText(ContentProviderCompat.requireContext(), "Button clicked for ${addArtist.name}", Toast.LENGTH_SHORT).show()
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,8 +27,8 @@ class YourLibraryFragment: BaseFragment<FragmentYourLibraryBinding>(FragmentYour
 
         val items = listOf(
             HeaderItem("Add artists"),
-           // ButtonItem(AddArtist("Artist 1", ItemType.ITEM)),
-           // ButtonItem(AddArtist("Artist 2", ItemType.ITEM)),
+            // ButtonItem(AddArtist("Artist 1", ItemType.ITEM)),
+            // ButtonItem(AddArtist("Artist 2", ItemType.ITEM)),
 
         )
         val adapter =RecyclerViewAdapter(items) { artist ->
