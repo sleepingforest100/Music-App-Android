@@ -18,7 +18,6 @@ import kz.just_code.musicapp.viewmodel.SearchViewModel
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
-//    private val viewModel = HomeViewModel()
     private val viewmodel: SearchViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
