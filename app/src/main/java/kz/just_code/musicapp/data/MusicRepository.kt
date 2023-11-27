@@ -4,11 +4,12 @@ import androidx.lifecycle.LiveData
 import kz.just_code.musicapp.AlbumData
 import kz.just_code.musicapp.AlbumItem
 import kz.just_code.musicapp.Albums
+import kz.just_code.musicapp.PlaylistSecondList
 
 interface MusicRepository {
     suspend fun searchMusic(text: String)
     val albumlivedata: LiveData<List<AlbumItem>?>
 
-    suspend fun getAlbums(albums: Albums)
-    val getalbums: LiveData<List<AlbumData>?>
+    suspend fun getAlbums()
+    val homeAlbumsLiveData: LiveData<List<PlaylistSecondList>>
 }

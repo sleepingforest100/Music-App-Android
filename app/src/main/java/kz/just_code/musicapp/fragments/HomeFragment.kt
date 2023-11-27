@@ -3,33 +3,28 @@ package kz.just_code.musicapp.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.musicapp.Playlist
 import kz.just_code.musicapp.PlaylistSecondList
 import kz.just_code.musicapp.Playlists2Adapter
 import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentHomeBinding
-import kz.just_code.musicapp.databinding.ViewBottomNavigationBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
-import kz.just_code.musicapp.viewmodel.SearchViewModel
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
-//    private val viewModel = HomeViewModel()
-    private val viewmodel: SearchViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
         setUpSecondRecyclerView()
-//        viewModel.searchMusic("text")
-
+        if (viewModel.getAlbumsLiveData.value.isNullOrEmpty()) viewModel.getAlbums()
     }
-
-
 
     private fun setUpRecyclerView() {
         adapter = PlaylistsAdapter()
@@ -50,7 +45,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = this@HomeFragment.adapter2
         }
-        adapter2.submitList(createPlaylistList2())
+
+        viewModel.getAlbumsLiveData.observe(viewLifecycleOwner) {
+            adapter2.submitList(it)
+        }
     }
 
     private fun createPlaylistList(): ArrayList<Playlist> {
@@ -62,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         )
     }
 
-    private fun createPlaylistList2(): ArrayList<PlaylistSecondList> {
+/*    private fun createPlaylistList2(): ArrayList<PlaylistSecondList> {
         return arrayListOf<PlaylistSecondList>(
             PlaylistSecondList(
                 0,
@@ -85,6 +83,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
         )
-    }
+    }*/
 
 }

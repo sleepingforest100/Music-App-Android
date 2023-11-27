@@ -19,7 +19,16 @@ data class Albums(
 
 data class AlbumItem(
     val data: AlbumData? = null
-)
+) {
+    fun getPlaylist(id: Int): PlaylistSecondList {
+        return PlaylistSecondList(
+            id = id,
+            title = data?.name.orEmpty(),
+            image = data?.coverArt?.sources?.firstOrNull()?.url.orEmpty(),
+            description = data?.artists?.items?.firstOrNull()?.profile?.name.orEmpty()
+        )
+    }
+}
 
 data class AlbumData(
     val uri: String? = null,
