@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import kz.just_code.musicapp.AlbumData
 import kz.just_code.musicapp.AlbumItem
 import kz.just_code.musicapp.Albums
+import kz.just_code.musicapp.PlaylistSecondList
 import kz.just_code.musicapp.data.MusicRepository
 import kz.just_code.musicapp.data.SpotifyApi
 import javax.inject.Inject
@@ -14,14 +15,19 @@ import javax.inject.Singleton
 class MusicRepositoryImpl @Inject constructor(private val api: SpotifyApi) : MusicRepository {
     private val albumsLiveData = MutableLiveData<List<AlbumItem>?>()
     override val albumlivedata: LiveData<List<AlbumItem>?> = albumsLiveData
-    override suspend fun getAlbums(albums: Albums) {
+
+    override suspend fun getAlbums() {
         val getAlbumsResponse = api.getAlbums()
         if (getAlbumsResponse.isSuccessful) {
-//            getAlbumsLiveData.postValue(getAlbumsResponse.body()?.albums?.items)
+            val items = getAlbumsResponse.body()?.albums?.items?.mapIndexed { index, albumItem ->
+                albumItem.getPlaylist(index)
+            }
+            getAlbumsLiveData.postValue(items.orEmpty())
         }
     }
-    private val getAlbumsLiveData = MutableLiveData<List<AlbumData>?>()
-    override val getalbums: LiveData<List<AlbumData>?> = getAlbumsLiveData
+
+    private val getAlbumsLiveData = MutableLiveData<List<PlaylistSecondList>>()
+    override val homeAlbumsLiveData: LiveData<List<PlaylistSecondList>> = getAlbumsLiveData
 
     override suspend fun searchMusic(text: String) {
         val response = api.searchMusic(text)

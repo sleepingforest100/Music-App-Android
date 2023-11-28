@@ -12,7 +12,7 @@ class Playlists2Adapter() :
     inner class PlaylistSecondViewHolder(var itemBinding: ItemPlaylist2Binding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 fun bindItem(playlist: PlaylistSecondList){
-    itemBinding.playlistIcon2.setImageResource(playlist.image)
+    //itemBinding.playlistIcon2.set(playlist.image)
     itemBinding.itemMusicTitle.text = playlist.title
     itemBinding.itemPlaylistDescription.text = playlist.description
 }
