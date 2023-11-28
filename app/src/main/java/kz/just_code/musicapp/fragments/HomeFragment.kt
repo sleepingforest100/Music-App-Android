@@ -12,16 +12,16 @@ import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentHomeBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
+import kz.just_code.musicapp.viewmodel.SearchViewModel
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
-<<<<<<< HEAD
     private val viewmodel: SearchViewModel by viewModels()
-=======
+
     private val viewModel: HomeViewModel by viewModels()
->>>>>>> origin/add_network
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

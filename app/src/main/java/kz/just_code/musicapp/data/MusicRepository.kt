@@ -1,9 +1,7 @@
 package kz.just_code.musicapp.data
 
 import androidx.lifecycle.LiveData
-import kz.just_code.musicapp.AlbumData
 import kz.just_code.musicapp.AlbumItem
-import kz.just_code.musicapp.Albums
 import kz.just_code.musicapp.PlaylistSecondList
 
 interface MusicRepository {
