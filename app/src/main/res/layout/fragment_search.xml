@@ -27,7 +27,7 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/search_box"
@@ -52,13 +52,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchView"
-        app:spanCount="2"
         tools:listitem="@layout/item_albums_response" />
 </androidx.constraintlayout.widget.ConstraintLayout>

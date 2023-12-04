@@ -2,13 +2,13 @@ package kz.just_code.musicapp
 
 //ALL DATA CLASSES
 data class SearchResponse(
-    val albums: Albums? = null,
-    val artists: Artists? = null,
-    val genres: Genres? = null,
-    val playlists: Playlists? = null,
-    val podcasts: Podcasts? = null,
+    //val albums: Albums? = null,
+   // val artists: Artists? = null,
+   // val genres: Genres? = null,
+   // val playlists: Playlists? = null,
+   // val podcasts: Podcasts? = null,
     val tracks: Tracks? = null,
-    val topResults: TopResults? = null
+   // val topResults: TopResults? = null
 )
 
 //ALBUMS

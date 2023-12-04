@@ -8,7 +8,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface SpotifyApi {
-    @GET("search")
+    @GET("search/?type=tracks")
     @Headers(
         "X-RapidAPI-Key: 8f41e30c1emshf912ca809a7dcc9p1593d5jsnd63c6c141314",
         "X-RapidAPI-Host: spotify23.p.rapidapi.com"
