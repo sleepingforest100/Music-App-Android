@@ -19,16 +19,7 @@ data class Albums(
 
 data class AlbumItem(
     val data: AlbumData? = null
-) {
-    fun getPlaylist(id: Int): PlaylistSecondList {
-        return PlaylistSecondList(
-            id = id,
-            title = data?.name.orEmpty(),
-            image = data?.coverArt?.sources?.firstOrNull()?.url.orEmpty(),
-            description = data?.artists?.items?.firstOrNull()?.profile?.name.orEmpty()
-        )
-    }
-}
+)
 
 data class AlbumData(
     val uri: String? = null,
@@ -317,3 +308,67 @@ data class SongPlayability(
 data class SongSharingInfo(
     val shareUrl: String? = null
 )
+
+data class AlbumsResponse(
+    val albums: List<AlbumsData>? = null
+)
+
+data class AlbumsData(
+    val album_type: String? = null,
+    val genres: List<String>? = null,
+    val id: String? = null,
+    val images: List<Image>? = null,
+    val is_playable: Boolean? = null,
+    val label: String? = null,
+    val name: String? = null,
+    val popularity: Int? = null,
+    val release_date: String? = null,
+    val release_date_precision: String? = null,
+    val total_tracks: Int? = null,
+    val tracks: AlbumTracks? = null,
+    val type: String? = null,
+    val uri: String? = null
+) {
+    fun getPlaylist(id: Int): PlaylistSecondList {
+        return PlaylistSecondList(
+            id = id,
+            title = name.orEmpty(),
+            image = images?.firstOrNull()?.url.orEmpty(),
+            description = label.orEmpty(),
+            tracks = tracks?.items.orEmpty()
+        )
+    }
+}
+
+data class AlbumTracks(
+    val items: List<Track>? = null,
+    val limit: Int? = null,
+    val offset: Int? = null,
+    val total: Int? = null
+)
+
+data class Image(
+    val height: Int? = null,
+    val url: String? = null,
+    val width: Int? = null
+)
+
+data class Track(
+    val disc_number: Int? = null,
+    val duration_ms: Long? = null,
+    val explicit: Boolean? = null,
+    val external_urls: ExternalUrls? = null,
+    val id: String? = null,
+    val is_local: Boolean? = null,
+    val is_playable: Boolean? = null,
+    val name: String? = null,
+    val preview_url: String? = null,
+    val track_number: Int? = null,
+    val type: String? = null,
+    val uri: String? = null
+)
+
+data class ExternalUrls(
+    val spotify: String? = null
+)
+

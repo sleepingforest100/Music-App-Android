@@ -2,9 +2,7 @@ package kz.just_code.musicapp.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import kz.just_code.musicapp.AlbumData
 import kz.just_code.musicapp.AlbumItem
-import kz.just_code.musicapp.Albums
 import kz.just_code.musicapp.PlaylistSecondList
 import kz.just_code.musicapp.data.MusicRepository
 import kz.just_code.musicapp.data.SpotifyApi
@@ -19,8 +17,9 @@ class MusicRepositoryImpl @Inject constructor(private val api: SpotifyApi) : Mus
     override suspend fun getAlbums() {
         val getAlbumsResponse = api.getAlbums()
         if (getAlbumsResponse.isSuccessful) {
-            val items = getAlbumsResponse.body()?.albums?.items?.mapIndexed { index, albumItem ->
-                albumItem.getPlaylist(index)
+            val response = getAlbumsResponse.body()
+            val items = response?.albums?.mapIndexed { index, track ->
+                track.getPlaylist(index)
             }
             getAlbumsLiveData.postValue(items.orEmpty())
         }
@@ -32,7 +31,7 @@ class MusicRepositoryImpl @Inject constructor(private val api: SpotifyApi) : Mus
     override suspend fun searchMusic(text: String) {
         val response = api.searchMusic(text)
         if (response.isSuccessful) {
-            albumsLiveData.postValue(response.body()?.albums?.items)
+            // albumsLiveData.postValue(response.body()?.albums?.firstOrNull()?.items)
         }
     }
 }

@@ -3,5 +3,6 @@ data class PlaylistSecondList(
     var id: Int,
     var title: String,
     var image: String,
-    var description: String
+    var description: String,
+    val tracks: List<Track>
 )
