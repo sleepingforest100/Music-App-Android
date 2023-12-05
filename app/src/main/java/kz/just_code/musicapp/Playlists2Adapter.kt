@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kz.just_code.musicapp.databinding.ItemPlaylist2Binding
 
 class Playlists2Adapter() :
@@ -12,7 +13,7 @@ class Playlists2Adapter() :
     inner class PlaylistSecondViewHolder(var itemBinding: ItemPlaylist2Binding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 fun bindItem(playlist: PlaylistSecondList){
-    //itemBinding.playlistIcon2.set(playlist.image)
+    Glide.with(itemView.context).load(playlist.image).into(itemBinding.playlistIcon2)
     itemBinding.itemMusicTitle.text = playlist.title
     itemBinding.itemPlaylistDescription.text = playlist.description
 }
