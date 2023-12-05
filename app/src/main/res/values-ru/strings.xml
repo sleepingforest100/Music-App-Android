@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Главная</string>
+    <string name="search">Поиск</string>
+    <string name="your_library">Ваша библиотека</string>
+    <string name="premium">Премиум</string>
+    <string name="good_afternoon">Добрый день</string>
+    <string name="recently_played">Недавно играли</string>
+    <string name="to_get_you_started">Чтобы начать</string>
+    <string name="recents">Недавние</string>
+    <string name="add_artist">Добавить песню</string>
+    <string name="album_name">Название альбома</string>
+    <string name="artist_name">Имя исполнителя</string>
+    <string name="artist">Исполнитель</string>
+    <string name="try_something_else">Попробуйте что-нибудь еще</string>
+</resources>

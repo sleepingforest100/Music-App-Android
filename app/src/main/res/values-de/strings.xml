@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Zuhause</string>
+    <string name="search">Suchen</string>
+    <string name="your_library">Ihre Bibliothek</string>
+    <string name="premium">Premium</string>
+    <string name="good_afternoon">Guten Tag</string>
+    <string name="recently_played">Kürzlich gespielt</string>
+    <string name="to_get_you_started">Um Ihnen den Einstieg zu erleichtern</string>
+    <string name="recents">Neueste</string>
+    <string name="add_artist">Titel hinzufügen</string>
+    <string name="album_name">Albumname</string>
+    <string name="artist_name">Titelname</string>
+    <string name="artist">Künstler</string>
+    <string name="try_something_else">Versuchen Sie etwas anderes</string>
+</resources>

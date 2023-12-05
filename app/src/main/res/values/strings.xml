@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Music App</string>
+    <string name="app_name" translatable="false">Music App</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="your_library">Your library</string>
@@ -7,8 +7,7 @@
     <string name="good_afternoon">Good afternoon</string>
     <string name="recently_played">Recently played</string>
     <string name="to_get_you_started">To get you started</string>
-    <string name="six60_mitch_james_tiki_taane_and_more">six60, mitch james, tiki taane and more</string>
-    <string name="daily_mix_1">Daily Mix 1</string>
+    <string name="daily_mix_1" translatable="false">Daily Mix 1</string>
     <string name="recents">Recents</string>
     <string name="add_artist">Add artist</string>
     <string name="album_name">Album name</string>
