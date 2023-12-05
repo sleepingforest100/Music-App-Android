@@ -18,19 +18,19 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.searchView.setOnQueryTextListener(object: OnQueryTextListener{
+        binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 toggleLoading(true)
-               viewmodel.searchMusic(query.orEmpty())
+                viewmodel.searchMusic(query.orEmpty())
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-               return false
+                return false
             }
 
         })
-        viewmodel.trackLiveData.observe(viewLifecycleOwner){
+        viewmodel.trackLiveData.observe(viewLifecycleOwner) {
             toggleLoading(false)
             adapter.submitList(it)
         }

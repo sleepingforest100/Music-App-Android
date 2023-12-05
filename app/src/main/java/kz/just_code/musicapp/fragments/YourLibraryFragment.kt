@@ -16,10 +16,12 @@ import kz.just_code.musicapp.ItemType
 import kz.just_code.musicapp.RecyclerViewAdapter
 import kz.just_code.musicapp.databinding.FragmentYourLibraryBinding
 
-class YourLibraryFragment: BaseFragment<FragmentYourLibraryBinding>(FragmentYourLibraryBinding::inflate) {
+class YourLibraryFragment :
+    BaseFragment<FragmentYourLibraryBinding>(FragmentYourLibraryBinding::inflate) {
     private val onAddArtistClickListener: (AddArtist) -> Unit = { addArtist ->
         // Toast.makeText(ContentProviderCompat.requireContext(), "Button clicked for ${addArtist.name}", Toast.LENGTH_SHORT).show()
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -31,21 +33,43 @@ class YourLibraryFragment: BaseFragment<FragmentYourLibraryBinding>(FragmentYour
             // ButtonItem(AddArtist("Artist 2", ItemType.ITEM)),
 
         )
-        val adapter =RecyclerViewAdapter(items) { artist ->
+        val adapter = RecyclerViewAdapter(items) { artist ->
 
-            Toast.makeText(requireContext(), "Button clicked for ${artist.items}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "Button clicked for ${artist.items}",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter.submitList(listOf(
-            Artist(0, listOf(ArtistItem("", ArtistProfile(name = "Anton"))), viewType = ItemType.ITEM),
-            Artist(1, listOf(ArtistItem("", ArtistProfile(name = "Anton"))), viewType = ItemType.ITEM),
-            Artist(2, listOf(ArtistItem("", ArtistProfile(name = "Anton"))), viewType = ItemType.ITEM),
-            Artist(3, listOf(ArtistItem("", ArtistProfile(name = "Anton"))), viewType = ItemType.ITEM),
-            Artist(4, null, ItemType.HEADER)
-        ))
+        adapter.submitList(
+            listOf(
+                Artist(
+                    0,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
+                Artist(
+                    1,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
+                Artist(
+                    2,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
+                Artist(
+                    3,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
+                Artist(4, null, ItemType.HEADER)
+            )
+        )
     }
 
 }

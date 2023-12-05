@@ -64,29 +64,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         )
     }
 
-/*    private fun createPlaylistList2(): ArrayList<PlaylistSecondList> {
-        return arrayListOf<PlaylistSecondList>(
-            PlaylistSecondList(
-                0,
-                "Playlist 1",
-                R.drawable.example,
-                "six60, mitch james, tiki taane and more"
-            ),
-            PlaylistSecondList(
-                1,
-                "Playlist 2",
-                R.drawable.example,
-                "six60, mitch james, tiki taane and more"
-            ),
-            PlaylistSecondList(
-                3,
-                "Playlist 3",
-                R.drawable.example,
-                "six60, mitch james, tiki taane and more"
+    /*    private fun createPlaylistList2(): ArrayList<PlaylistSecondList> {
+            return arrayListOf<PlaylistSecondList>(
+                PlaylistSecondList(
+                    0,
+                    "Playlist 1",
+                    R.drawable.example,
+                    "six60, mitch james, tiki taane and more"
+                ),
+                PlaylistSecondList(
+                    1,
+                    "Playlist 2",
+                    R.drawable.example,
+                    "six60, mitch james, tiki taane and more"
+                ),
+                PlaylistSecondList(
+                    3,
+                    "Playlist 3",
+                    R.drawable.example,
+                    "six60, mitch james, tiki taane and more"
+                )
+
+
             )
-
-
-        )
-    }*/
+        }*/
 
 }

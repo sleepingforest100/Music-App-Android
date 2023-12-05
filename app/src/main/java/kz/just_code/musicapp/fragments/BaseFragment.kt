@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import kz.just_code.musicapp.R
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -31,7 +32,7 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflate<VB>) 
 
     private fun setUpLoadingDialog() {
         loadingDialog = AlertDialog.Builder(requireContext())
-            //.setView(R.layout.dialog_loading)
+            .setView(R.layout.dialog_loading)
             .setCancelable(false)
             .create().apply {
                 window?.setBackgroundDrawableResource(android.R.color.transparent)
