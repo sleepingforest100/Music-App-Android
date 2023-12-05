@@ -10,6 +10,7 @@ class TrackViewHolder(private val binding: ItemTrackBinding) :
     fun bind(item: SongTrackItem) {
         // Set album name
         binding.trackTitle.text = item.data?.name
+        binding.singerName.text = item.data?.artists?.items?.firstOrNull()?.profile?.name
 
         // Load album icon using Glide (or your preferred image loading library)
         Glide.with(itemView.context)
