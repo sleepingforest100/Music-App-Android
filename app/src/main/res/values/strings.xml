@@ -14,4 +14,5 @@
     <string name="album_name">Album name</string>
     <string name="artist_name">Artist name</string>
     <string name="artist">Artist</string>
+    <string name="try_something_else">Try something else</string>
 </resources>

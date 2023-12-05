@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@color/gray"
+    >
 
     <ImageView
         android:id="@+id/search_back_btn"
@@ -52,12 +53,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recyclerView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="6dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchView"
-        tools:listitem="@layout/item_albums_response" />
+        tools:listitem="@layout/item_track" />
 </androidx.constraintlayout.widget.ConstraintLayout>

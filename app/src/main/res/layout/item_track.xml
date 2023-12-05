@@ -2,43 +2,57 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/album_response_bg"
+        android:src="@drawable/item_track_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/album_image_box"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="21dp"
-        app:cardCornerRadius="30dp"
+        android:id="@+id/track_image_box"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/album_icon"
+            android:id="@+id/track_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/album_title"
+        android:id="@+id/track_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="5dp"
-        android:text="@string/album_name"
+        android:layout_marginStart="6dp"
+        android:text="Track name"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/album_image_box"
+        app:layout_constraintStart_toEndOf="@id/track_image_box"
         app:layout_constraintTop_toTopOf="parent" />
+<TextView
+    android:id="@+id/singer_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Singer name"
+    app:layout_constraintTop_toBottomOf="@id/track_title"
+    app:layout_constraintStart_toEndOf="@id/track_image_box"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="4dp"
+    android:textColor="#7F8489"
+    android:textSize="12sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import kz.just_code.musicapp.databinding.ItemAlbumsResponseBinding
+import kz.just_code.musicapp.databinding.ItemTrackBinding
 
 class TrackAdapter() :
     ListAdapter<SongTrackItem, TrackViewHolder>(AlbumDiffUtils()) {
@@ -20,7 +20,7 @@ class TrackAdapter() :
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder {
-        val view = ItemAlbumsResponseBinding.inflate(
+        val view = ItemTrackBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return TrackViewHolder(view)
