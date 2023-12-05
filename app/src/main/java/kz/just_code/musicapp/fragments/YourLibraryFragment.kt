@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kz.just_code.musicapp.AddArtist
@@ -27,6 +28,12 @@ class YourLibraryFragment :
 
         val recyclerView: RecyclerView = binding.recyclerviewLibrary
 
+        binding.searchIcon.setOnClickListener {
+            findNavController().navigate(YourLibraryFragmentDirections.actionYourLibraryFragmentToSearchFragment())
+        }
+        binding.userIcon.setOnClickListener {
+            findNavController().navigate(YourLibraryFragmentDirections.actionYourLibraryFragmentToUserFragment())
+        }
         val items = listOf(
             HeaderItem("Add artists"),
             // ButtonItem(AddArtist("Artist 1", ItemType.ITEM)),
@@ -70,6 +77,7 @@ class YourLibraryFragment :
                 Artist(4, null, ItemType.HEADER)
             )
         )
+
     }
 
 }

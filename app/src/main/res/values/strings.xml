@@ -14,4 +14,8 @@
     <string name="artist_name">Artist name</string>
     <string name="artist">Artist</string>
     <string name="try_something_else">Try something else</string>
+    <string name="add_tracks">Add tracks</string>
+    <string name="track_title">Track title</string>
+    <string name="six60_mitch_james_tiki_taane_and_more">six60_mitch_james_tiki_taane_and_more</string>
+    <string name="description">Description</string>
 </resources>

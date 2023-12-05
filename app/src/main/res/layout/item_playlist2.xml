@@ -59,7 +59,7 @@
             android:layout_width="110dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
-            android:text="@string/six60_mitch_james_tiki_taane_and_more"
+            android:text="@string/description"
             android:textColor="#7F8489"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"

@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/artist_name"
+        android:text="@string/track_title"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/image_box_for_artist"

@@ -13,4 +13,7 @@
     <string name="artist_name">Titelname</string>
     <string name="artist">Künstler</string>
     <string name="try_something_else">Versuchen Sie etwas anderes</string>
+    <string name="add_tracks">Tracks hinzufügen</string>
+    <string name="track_title">Tracktitel</string>
+    <string name="description">Description</string>
 </resources>
