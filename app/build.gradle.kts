@@ -72,6 +72,8 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.0")
 //Spotify Android SDK
     implementation ("com.spotify.android:auth:1.2.3")
+        //Lingver
+    implementation("com.github.YarikSOffice:lingver:1.3.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

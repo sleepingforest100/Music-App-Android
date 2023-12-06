@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gray">
+
     <ImageView
         android:id="@+id/user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="26dp"
         android:src="@drawable/user_ic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="18dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
+        android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/settings"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user"/>
+        app:layout_constraintTop_toBottomOf="@id/user" />
+
+    <TextView
+        android:id="@+id/choose_lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/choose_your_language"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/english"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_lang" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/russian"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@id/en"
+        app:layout_constraintTop_toBottomOf="@id/choose_lang" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/de"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/german"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@id/ru"
+        app:layout_constraintTop_toBottomOf="@id/choose_lang" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
