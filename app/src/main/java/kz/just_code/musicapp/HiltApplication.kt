@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.yariksoffice.lingver.Lingver
 import dagger.hilt.android.HiltAndroidApp
-import kz.just_code.musicapp.fragments.Theme
 
 @HiltAndroidApp
 class HiltApplication: Application() {
