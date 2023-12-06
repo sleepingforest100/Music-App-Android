@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "track_list")
 data class TrackEntity(
-    @PrimaryKey val id: String,
+    @PrimaryKey val id: Int,
     val imageUrl: String,
     val trackName: String,
     val artistName: String,

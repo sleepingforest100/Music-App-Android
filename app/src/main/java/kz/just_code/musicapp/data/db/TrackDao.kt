@@ -9,14 +9,12 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TrackDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveTrack(track: TrackEntity) {
-
-    }
+    fun save(track: TrackEntity)
 
     @Query("Delete from track_list where id=:id")
-    fun deleteByID(id: Int){
+    fun deleteByID(id: Int)
 
-    }
     @Query("Select * from track_list")
     fun getAllFlow(): Flow<TrackEntity>
+
 }
