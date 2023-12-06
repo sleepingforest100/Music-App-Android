@@ -9,6 +9,9 @@ import kz.just_code.musicapp.databinding.ItemTrackBinding
 class TrackAdapter() :
     ListAdapter<SongTrackItem, TrackViewHolder>(AlbumDiffUtils()) {
 
+    var click: ((SongTrackItem) -> Unit)? = null
+    var like: ((SongTrackItem) -> Unit)? = null
+
     class AlbumDiffUtils: DiffUtil.ItemCallback<SongTrackItem>(){
         override fun areItemsTheSame(oldItem: SongTrackItem, newItem: SongTrackItem): Boolean {
            return oldItem.data?.id == newItem.data?.id
@@ -23,7 +26,7 @@ class TrackAdapter() :
         val view = ItemTrackBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return TrackViewHolder(view)
+        return TrackViewHolder(view, click, like)
     }
 
     override fun onBindViewHolder(holder: TrackViewHolder, position: Int) {

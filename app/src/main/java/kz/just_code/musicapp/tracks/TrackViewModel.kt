@@ -12,11 +12,13 @@ import javax.inject.Inject
 class TrackViewModel @Inject constructor(
     private val repo: TrackRepository
 ) : BaseViewModel() {
-    val trackListLiveData: LiveData<TrackEntity> = repo.tracksFlow.asLiveData()
+    val trackListLiveData: LiveData<List<TrackEntity>> = repo.tracksFlow.asLiveData()
 
     fun saveTrack(track: String){
         launch(
-            request = repo.saveTrack(track)
+            request = {
+               // repo.saveTrack(track)
+            }
         )
     }
     fun deleteById(id: Int){

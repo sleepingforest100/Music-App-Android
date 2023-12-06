@@ -7,15 +7,14 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.musicapp.TrackAdapter
+import kz.just_code.musicapp.data.media_player.Player
 import kz.just_code.musicapp.databinding.FragmentSearchBinding
-import kz.just_code.musicapp.databinding.ItemTrackBinding
 import kz.just_code.musicapp.viewmodel.SearchViewModel
 
 @AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
     private val viewmodel: SearchViewModel by viewModels()
     private val adapter = TrackAdapter()
-    private val itemTrack: ItemTrackBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,8 +40,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
             findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToHomeFragment())
         }
 
-        itemTrack.likeBtn.setOnClickListener {
-            viewmodel.save
+        adapter.click = {
+            Player.playAudio(requireContext(), it.data?.uri)
+        }
+
+        adapter.like = {
+            viewmodel.saveTrack(it)
         }
     }
 

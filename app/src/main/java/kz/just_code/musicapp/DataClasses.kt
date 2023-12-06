@@ -1,5 +1,7 @@
 package kz.just_code.musicapp
 
+import kz.just_code.musicapp.data.db.TrackEntity
+
 //ALL DATA CLASSES
 data class SearchResponse(
     val albums: Albums? = null,
@@ -291,7 +293,18 @@ data class SongTrackData(
     val contentRating: SongContentRating? = null,
     val duration: SongDuration? = null,
     val playability: SongPlayability? = null
-)
+) {
+    fun getTrackEntity(): TrackEntity {
+        return TrackEntity(
+            id = 0,
+            imageUrl = albumOfTrack?.coverArt?.sources?.firstOrNull()?.url.orEmpty(),
+            trackName = name.orEmpty(),
+            artistName = artists?.items?.firstOrNull()?.profile?.name.orEmpty(),
+            albumName = albumOfTrack?.name.orEmpty(),
+            durationMs = (duration?.totalMilliseconds ?: 0).toLong()
+        )
+    }
+}
 
 data class SongAlbumOfTrack(
     val uri: String? = null,

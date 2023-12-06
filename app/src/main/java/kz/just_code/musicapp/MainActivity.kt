@@ -1,21 +1,22 @@
 package kz.just_code.musicapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.yariksoffice.lingver.Lingver
 import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.musicapp.databinding.ActivityMainBinding
 import kz.just_code.musicapp.databinding.FragmentUserBinding
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+
     private lateinit var settings: FragmentUserBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavView.setupWithNavController(navController)
 //languages
-        settings.en.setOnClickListener{
+       /* settings.en.setOnClickListener{
             Lingver.getInstance().setLocale(this, "en")
             this.recreate()
         }
@@ -42,6 +43,6 @@ class MainActivity : AppCompatActivity() {
         settings.de.setOnClickListener{
             Lingver.getInstance().setLocale(this, "de")
             this.recreate()
-        }
+        }*/
     }
 }

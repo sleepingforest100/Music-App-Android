@@ -15,6 +15,6 @@ interface TrackDao {
     fun deleteByID(id: Int)
 
     @Query("Select * from track_list")
-    fun getAllFlow(): Flow<TrackEntity>
+    fun getAllFlow(): Flow<List<TrackEntity>>
 
 }
