@@ -42,7 +42,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
 
         itemTrack.likeBtn.setOnClickListener {
-            viewmodel.
+            viewmodel.save
         }
     }
 
