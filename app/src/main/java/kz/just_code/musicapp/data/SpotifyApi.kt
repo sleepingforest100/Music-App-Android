@@ -18,7 +18,7 @@ interface SpotifyApi {
 
     ): Response<SearchResponse>
 
-    @GET("/albums/?ids=3IBcauSj5M2A6lTeffJzdv,33Ek6daAL3oXyQIV1uoItD,7IouDrXPdAZwT1NzVV3vef,41GuZcammIkupMPKH2OJ6I,0HS8aknH0JQdMIiBVhyOCW")
+    @GET("/albums/?ids=7pRdNCE5jywv19bIs1dk9b,6n9DKpOxwifT5hOXtgLZSL,1Js0hJHLl93KdM7PmnTAx5,7fJJK56U9fHixgO0HQkhtI,1rzDtYMpZDhRgKNigB467r,2Auw0pTT6EcQdvHNimhLQI")
     @Headers(
         "X-RapidAPI-Key: 8475dfb7b0msh039ee1a3acd302ap195110jsn3c1720bebf1a",
         "X-RapidAPI-Host: spotify23.p.rapidapi.com"

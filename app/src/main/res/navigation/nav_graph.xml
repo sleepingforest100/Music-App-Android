@@ -7,11 +7,19 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="kz.just_code.musicapp.fragments.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="kz.just_code.musicapp.fragments.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/yourLibraryFragment"
         android:name="kz.just_code.musicapp.fragments.YourLibraryFragment"

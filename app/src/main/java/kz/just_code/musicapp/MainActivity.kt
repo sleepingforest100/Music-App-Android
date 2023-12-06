@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         // Настроить Bottom Navigation с NavController
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavView.setupWithNavController(navController)
-
+//languages
         settings.en.setOnClickListener{
             Lingver.getInstance().setLocale(this, "en")
             this.recreate()
@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         settings.de.setOnClickListener{
             Lingver.getInstance().setLocale(this, "de")
             this.recreate()
-
         }
+//Themes
 
     }
 }

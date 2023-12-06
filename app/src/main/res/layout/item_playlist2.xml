@@ -14,39 +14,40 @@
             android:id="@+id/item_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/gray"
             android:src="@drawable/rectangle2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/gray"/>
-<androidx.cardview.widget.CardView
-    android:id="@+id/item_music_image_box"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="26dp"
-    app:layout_constraintBottom_toBottomOf="@+id/item_background"
-    app:layout_constraintEnd_toEndOf="@+id/item_background"
-    app:layout_constraintHorizontal_bias="0.4"
-    app:layout_constraintStart_toStartOf="@+id/item_background"
-    app:layout_constraintTop_toTopOf="@+id/item_background"
-    app:layout_constraintVertical_bias="0.125">
-    <ImageView
-        android:id="@+id/playlist_icon2"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:background="@drawable/rounded_background"
-        tools:ignore="DuplicateIds" />
-</androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_music_image_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="26dp"
+            app:layout_constraintBottom_toBottomOf="@+id/item_background"
+            app:layout_constraintEnd_toEndOf="@+id/item_background"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@+id/item_background"
+            app:layout_constraintTop_toTopOf="@+id/item_background"
+            app:layout_constraintVertical_bias="0.125">
+
+            <ImageView
+                android:id="@+id/playlist_icon2"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@drawable/rounded_background"
+                tools:ignore="DuplicateIds" />
+        </androidx.cardview.widget.CardView>
 
 
         <TextView
             android:id="@+id/item_music_title"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/daily_mix_1"
-            android:singleLine="true"
             android:textColor="#E06D94"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -58,7 +59,7 @@
             android:id="@+id/item_playlist_description"
             android:layout_width="110dp"
             android:layout_height="30dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="@string/description"
             android:textColor="#7F8489"
             android:textSize="11sp"

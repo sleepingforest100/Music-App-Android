@@ -74,6 +74,16 @@ class YourLibraryFragment :
                     listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
                     viewType = ItemType.ITEM
                 ),
+                Artist(
+                    4,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
+                Artist(
+                    5,
+                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    viewType = ItemType.ITEM
+                ),
                 Artist(4, null, ItemType.HEADER)
             )
         )

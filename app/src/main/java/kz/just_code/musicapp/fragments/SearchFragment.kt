@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.musicapp.TrackAdapter
 import kz.just_code.musicapp.databinding.FragmentSearchBinding
@@ -35,6 +36,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
             adapter.submitList(it)
         }
         binding.searchRecyclerView.adapter = adapter
+        binding.searchBackBtn.setOnClickListener {
+            findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToHomeFragment())
+        }
     }
 
 }

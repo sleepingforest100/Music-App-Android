@@ -3,6 +3,7 @@ package kz.just_code.musicapp.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.musicapp.Playlist
@@ -11,6 +12,7 @@ import kz.just_code.musicapp.Playlists2Adapter
 import kz.just_code.musicapp.PlaylistsAdapter
 import kz.just_code.musicapp.R
 import kz.just_code.musicapp.databinding.FragmentHomeBinding
+import kz.just_code.musicapp.databinding.ViewBottomNavigationBinding
 import kz.just_code.musicapp.viewmodel.HomeViewModel
 import kz.just_code.musicapp.viewmodel.SearchViewModel
 
@@ -18,6 +20,7 @@ import kz.just_code.musicapp.viewmodel.SearchViewModel
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private lateinit var adapter: PlaylistsAdapter
     private lateinit var adapter2: Playlists2Adapter
+
     private val viewmodel: SearchViewModel by viewModels()
 
     private val viewModel: HomeViewModel by viewModels()
@@ -28,6 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         setUpRecyclerView()
         setUpSecondRecyclerView()
         if (viewModel.getAlbumsLiveData.value.isNullOrEmpty()) viewModel.getAlbums()
+
     }
 
     private fun setUpRecyclerView() {
@@ -45,7 +49,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private fun setUpSecondRecyclerView() {
         adapter2 = Playlists2Adapter()
-        binding.getStartedList.apply {
+        binding.albumsList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = this@HomeFragment.adapter2
         }

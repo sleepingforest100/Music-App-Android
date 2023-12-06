@@ -2,13 +2,13 @@ package kz.just_code.musicapp
 
 //ALL DATA CLASSES
 data class SearchResponse(
-    //val albums: Albums? = null,
-   // val artists: Artists? = null,
-   // val genres: Genres? = null,
-   // val playlists: Playlists? = null,
-   // val podcasts: Podcasts? = null,
+    val albums: Albums? = null,
+    val artists: Artists? = null,
+    val genres: Genres? = null,
+    val playlists: Playlists? = null,
+    val podcasts: Podcasts? = null,
     val tracks: Tracks? = null,
-   // val topResults: TopResults? = null
+    val topResults: TopResults? = null
 )
 
 //ALBUMS
@@ -93,17 +93,48 @@ data class AvatarImageSourceInfo(
 )
 
 //GENRES
+//data class Genres(
+//    val totalCount: Int? = null,
+//    val items: List<GenreItem>? = null
+//)
+//
+//data class GenreItem(
+//    val data: GenreData? = null
+//)
+//
+//data class GenreData(
+//    val placeholder: String? = null
+//)
 data class Genres(
-    val totalCount: Int? = null,
-    val items: List<GenreItem>? = null
+    val items: List<GenresItem>
 )
 
-data class GenreItem(
-    val data: GenreData? = null
+data class GenresItem(
+    val content: GenresItemContent,
+    val custom_fields: List<Any>,
+    val external_urls: Any?,
+    val id: String,
+    val images: List<GenresImage>,
+    val name: String,
+    val rendering: String,
+    val tag_line: Any?,
+    val type: String
 )
 
-data class GenreData(
-    val placeholder: String? = null
+data class GenresItemContent(
+    val items: List<Any>,
+    val limit: Int,
+    val next: Any?,
+    val offset: Int,
+    val previous: Any?,
+    val total: Int
+)
+
+data class GenresImage(
+    val height: Int?,
+    val name: String,
+    val url: String,
+    val width: Int?
 )
 
 
@@ -317,7 +348,7 @@ data class AlbumsData(
     val album_type: String? = null,
     val genres: List<String>? = null,
     val id: String? = null,
-    val images: List<Image>? = null,
+    val images: List<GenresImage>? = null,
     val is_playable: Boolean? = null,
     val label: String? = null,
     val name: String? = null,
@@ -328,7 +359,8 @@ data class AlbumsData(
     val tracks: AlbumTracks? = null,
     val type: String? = null,
     val uri: String? = null
-) {
+)
+ {
     fun getPlaylist(id: Int): PlaylistSecondList {
         return PlaylistSecondList(
             id = id,
