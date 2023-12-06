@@ -19,4 +19,11 @@ class TrackViewModel @Inject constructor(
             request = repo.saveTrack(track)
         )
     }
+    fun deleteById(id: Int){
+        launch(
+            request = {
+                repo.deleteByID(id)
+            }
+        )
+    }
 }
