@@ -43,7 +43,5 @@ class MainActivity : AppCompatActivity() {
             Lingver.getInstance().setLocale(this, "de")
             this.recreate()
         }
-//Themes
-
     }
 }

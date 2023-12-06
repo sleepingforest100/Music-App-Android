@@ -15,9 +15,9 @@
     <string name="try_something_else">Попробуйте что-нибудь еще</string>
     <string name="add_tracks">Добавить треки</string>
     <string name="track_title">Название трека</string>
-    <string name="description">Description</string>
-    <string name="choose_your_language">Choose your language:</string>
-    <string name="english">English</string>
-    <string name="russian">Russian</string>
-    <string name="german">German</string>
+    <string name="description">Описание</string>
+    <string name="choose_your_language">Выберите язык:</string>
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
+    <string name="german">Немецкий</string>
 </resources>

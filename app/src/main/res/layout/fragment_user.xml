@@ -38,8 +38,8 @@
         android:id="@+id/en"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/english"
         android:layout_margin="10dp"
+        android:text="@string/english"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/choose_lang" />
 
@@ -47,8 +47,8 @@
         android:id="@+id/ru"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/russian"
         android:layout_margin="10dp"
+        android:text="@string/russian"
         app:layout_constraintStart_toEndOf="@id/en"
         app:layout_constraintTop_toBottomOf="@id/choose_lang" />
 
@@ -56,10 +56,50 @@
         android:id="@+id/de"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/german"
         android:layout_margin="10dp"
+        android:text="@string/german"
         app:layout_constraintStart_toEndOf="@id/ru"
         app:layout_constraintTop_toBottomOf="@id/choose_lang" />
+
+    <TextView
+        android:id="@+id/choose_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Choose theme:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/en" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/light_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Light"
+        app:layout_constraintStart_toEndOf="@id/dark_theme"
+        app:layout_constraintTop_toBottomOf="@id/choose_theme" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dark_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Dark"
+        app:layout_constraintStart_toEndOf="@id/system_theme"
+        app:layout_constraintTop_toBottomOf="@id/choose_theme" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/system_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="System"
+        app:layout_constraintTop_toBottomOf="@id/choose_theme"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
