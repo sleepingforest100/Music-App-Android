@@ -33,6 +33,7 @@ class YourLibraryFragment :
         binding.userIcon.setOnClickListener {
             findNavController().navigate(YourLibraryFragmentDirections.actionYourLibraryFragmentToUserFragment())
         }
+
         val items = listOf(
             HeaderItem("Add tracks"),
             // ButtonItem(AddArtist("Artist 1", ItemType.ITEM)),
