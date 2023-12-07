@@ -1,7 +1,7 @@
 package kz.just_code.musicapp.data
 
-import kz.just_code.musicapp.AlbumsResponse
-import kz.just_code.musicapp.SearchResponse
+import kz.just_code.musicapp.data.model.AlbumsResponse
+import kz.just_code.musicapp.data.model.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers

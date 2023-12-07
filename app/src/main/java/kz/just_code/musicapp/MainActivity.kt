@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
-    private lateinit var settings: FragmentUserBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,17 +32,6 @@ class MainActivity : AppCompatActivity() {
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavView.setupWithNavController(navController)
 //languages
-       /* settings.en.setOnClickListener{
-            Lingver.getInstance().setLocale(this, "en")
-            this.recreate()
-        }
-        settings.ru.setOnClickListener{
-            Lingver.getInstance().setLocale(this, "ru")
-            this.recreate()
-        }
-        settings.de.setOnClickListener{
-            Lingver.getInstance().setLocale(this, "de")
-            this.recreate()
-        }*/
+
     }
 }

@@ -2,6 +2,7 @@ package kz.just_code.musicapp
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import kz.just_code.musicapp.data.model.Artist
 import kz.just_code.musicapp.databinding.AddArtistBinding
 import kz.just_code.musicapp.databinding.ItemArtistBinding
 

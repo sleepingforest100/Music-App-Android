@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="kz.just_code.musicapp.fragments.HomeFragment"
+        android:name="kz.just_code.musicapp.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_musicFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="kz.just_code.musicapp.fragments.SearchFragment"
+        android:name="kz.just_code.musicapp.ui.search.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/action_searchFragment_to_homeFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/yourLibraryFragment"
-        android:name="kz.just_code.musicapp.fragments.YourLibraryFragment"
+        android:name="kz.just_code.musicapp.ui.yourlibrary.YourLibraryFragment"
         android:label="YourLibraryFragment" >
         <action
             android:id="@+id/action_yourLibraryFragment_to_searchFragment"
@@ -33,15 +33,15 @@
     </fragment>
     <fragment
         android:id="@+id/premiumFragment"
-        android:name="kz.just_code.musicapp.fragments.PremiumFragment"
+        android:name="kz.just_code.musicapp.ui.premium.PremiumFragment"
         android:label="PremiumFragment" />
     <fragment
         android:id="@+id/musicFragment"
-        android:name="kz.just_code.musicapp.fragments.MusicFragment"
+        android:name="kz.just_code.musicapp.ui.music.MusicFragment"
         android:label="MusicFragment" />
     <fragment
         android:id="@+id/userFragment"
-        android:name="kz.just_code.musicapp.fragments.UserFragment"
+        android:name="kz.just_code.musicapp.ui.user.UserFragment"
         android:label="UserFragment" />
 
 
