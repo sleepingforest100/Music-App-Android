@@ -6,14 +6,14 @@
     <string name="premium">Премиум</string>
     <string name="good_afternoon">Добрый день</string>
     <string name="recently_played">Недавно играли</string>
-    <string name="to_get_you_started">Чтобы начать</string>
+    <string name="to_get_you_started">Слушаем дальше?</string>
     <string name="recents">Недавние</string>
     <string name="add_artist">Добавить песню</string>
     <string name="album_name">Название альбома</string>
     <string name="artist_name">Имя исполнителя</string>
     <string name="artist">Исполнитель</string>
     <string name="try_something_else">Попробуйте что-нибудь еще</string>
-    <string name="add_tracks">Добавить треки</string>
+    <string name="add_tracks">Добавить исполнителей</string>
     <string name="track_title">Название трека</string>
     <string name="description">Описание</string>
     <string name="choose_your_language">Выберите язык:</string>

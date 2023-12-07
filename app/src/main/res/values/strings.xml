@@ -6,7 +6,7 @@
     <string name="premium">Premium</string>
     <string name="good_afternoon">Good afternoon</string>
     <string name="recently_played">Recently played</string>
-    <string name="to_get_you_started">To get you started</string>
+    <string name="to_get_you_started">Shall we listen further?</string>
     <string name="daily_mix_1" translatable="false">Daily Mix 1</string>
     <string name="recents">Recents</string>
     <string name="add_artist">Add artist</string>
@@ -14,7 +14,7 @@
     <string name="artist_name">Artist name</string>
     <string name="artist">Artist</string>
     <string name="try_something_else">Try something else</string>
-    <string name="add_tracks">Add tracks</string>
+    <string name="add_tracks">Add artists</string>
     <string name="track_title">Track title</string>
     <string name="description">Description</string>
     <string name="choose_your_language">Choose your language:</string>

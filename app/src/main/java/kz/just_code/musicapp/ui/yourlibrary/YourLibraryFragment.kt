@@ -35,7 +35,7 @@ class YourLibraryFragment :
         }
 
         val items = listOf(
-            HeaderItem("Add tracks"),
+            HeaderItem("Add artists"),
             // ButtonItem(AddArtist("Artist 1", ItemType.ITEM)),
             // ButtonItem(AddArtist("Artist 2", ItemType.ITEM)),
 
@@ -56,32 +56,32 @@ class YourLibraryFragment :
             listOf(
                 Artist(
                     0,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "The Beatles"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(
                     1,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "Queen"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(
                     2,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "Bob Marley & The Wailers"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(
                     3,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "Ed Sheeran"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(
                     4,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "Adele"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(
                     5,
-                    listOf(ArtistItem("", ArtistProfile(name = "Anton"))),
+                    listOf(ArtistItem("", ArtistProfile(name = "Beyoncé"))),
                     viewType = ItemType.ITEM
                 ),
                 Artist(4, null, ItemType.HEADER)

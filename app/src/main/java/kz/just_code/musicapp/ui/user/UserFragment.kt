@@ -40,6 +40,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::infl
 
     private fun setTheme(theme: Theme) {
         AppCompatDelegate.setDefaultNightMode(theme.system)
+        requireActivity().recreate()
     }
 
     private fun changeLocale(language: String) {
